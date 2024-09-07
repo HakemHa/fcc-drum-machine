@@ -25,6 +25,7 @@ smoothPianoKit[keys[8]] = new Audio(kitPath + "smoothPianoKit/Brk_Snr.mp3");
 const initialState = {
     sounds: heaterKit,
     keys: keys,
+    volume: 0.5,
 }
 
 export const drumSlice = createSlice({
@@ -36,10 +37,16 @@ export const drumSlice = createSlice({
                 ...state,
                 sounds: state[sounds][0] == heaterKit[0] ? smoothPianoKit : heaterKit,
             };
+        },
+        changeVolume: (state, action) => {
+            return {
+                ...state,
+                volume: action.payload,
+            }
         }
     }
 })
 
-export const { changeAudio } = drumSlice.actions;
+export const { changeAudio, changeVolume } = drumSlice.actions;
 
 export default drumSlice.reducer;

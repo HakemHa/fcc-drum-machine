@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
+import { changeAudio } from "./store/slice";
 //import "./styles/Button.css"
 
 function Button(props) {
     let sounds = useSelector(state => state.configs.sounds);
-    let dispatch = useDispatch();
     let playSound = () => {
-        let action = {type: "changeSounds", ok: "OK"}
-        console.log(dispatch(action));
+        sounds[props.value].play();
+        sounds[props.value].currentTime = 0;
     }
     return (
         <button name={props.value} type="button" onClick={playSound}>{props.value}</button>

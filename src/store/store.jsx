@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import markReducer from "./slice";
+import drumReducer from "./slice";
 
-const store = configureStore({ reducer: { configs: markReducer } });
+const store = configureStore({ reducer: { configs: drumReducer } });
 
 export default store;

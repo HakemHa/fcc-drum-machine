@@ -1,8 +1,11 @@
-//import "./styles/Logo.css"
+import "./styles/Logo.css"
 
 function Logo() {
     return (
-        <div className="inner-logo">FCC&nbsp;</div>
+        <div className="logo">
+            <div className="inner-logo ">FCC&nbsp;</div>
+            <i className="inner-logo fa fa-free-code-camp"></i>
+        </div>
     )
 }
 

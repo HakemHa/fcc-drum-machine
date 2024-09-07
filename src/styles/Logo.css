@@ -1,0 +1,8 @@
+.logo {
+    & .inner-logo {
+        display: inline-block;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 20px;
+    }
+}

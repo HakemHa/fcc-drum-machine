@@ -1,5 +1,5 @@
 import { useSelector, useDispatch} from "react-redux";
-import { changeVolume } from './store/slice';
+import { changeVolume, emptyStatus } from './store/slice';
 
 function VolumeSlider() {
     let volume = useSelector(state => (state.configs.volume*100).toString());
@@ -7,6 +7,7 @@ function VolumeSlider() {
     let setVolume = (e) => {
         let newVolume = parseFloat(e.target.value)/100;
         dispatch(changeVolume(newVolume));
+        setTimeout(() => {dispatch(emptyStatus(newVolume))}, 3000);
     }
     return (
         <div className="slide-container">

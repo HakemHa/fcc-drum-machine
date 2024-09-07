@@ -26,6 +26,8 @@ const initialState = {
     sounds: heaterKit,
     keys: keys,
     volume: 0.5,
+    on: true,
+    status: "",
 }
 
 export const drumSlice = createSlice({
@@ -33,20 +35,53 @@ export const drumSlice = createSlice({
     initialState,
     reducers: {
         changeAudio: (state, action) => {
+            let getStatus = () => {
+                if (state['sounds']['Q'] === heaterKit['Q']) {
+                    return "Smooth Piano Kit";
+                }
+                else {
+                    return "Heater Kit";
+                }
+            };
             return {
                 ...state,
-                sounds: state[sounds][0] == heaterKit[0] ? smoothPianoKit : heaterKit,
+                sounds: state['sounds']['Q'] === heaterKit['Q'] ? smoothPianoKit : heaterKit,
+                status: getStatus(),
             };
         },
         changeVolume: (state, action) => {
             return {
                 ...state,
                 volume: action.payload,
+                status: `Volume: ${Math.round(action.payload*100)}%`,
             }
-        }
+        },
+        switchOn: (state, action) => {
+            return {
+                ...state,
+                on: !state['on'],
+            }
+        },
+        emptyStatus: (state, action) => {
+            if (!action.payload) {
+                return {
+                    ...state,
+                    status: "",
+                }
+            }
+            if (action.payload === state['volume']) {
+                return {
+                    ...state,
+                    status: "",
+                }
+            }
+            else {
+                return state;
+            }
+        },
     }
 })
 
-export const { changeAudio, changeVolume } = drumSlice.actions;
+export const { changeAudio, changeVolume, switchOn, emptyStatus } = drumSlice.actions;
 
 export default drumSlice.reducer;

@@ -1,7 +1,7 @@
-function Switch() {
+function Switch(props) {
     return (
-        <button className="switch">
-            <div className="switch-state"></div>
+        <button className="switch" onClick={props.onClick}>
+            <div className="switch-state">clickme</div>
         </button>
     )
 }

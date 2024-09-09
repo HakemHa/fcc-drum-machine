@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { changeStatus } from "./store/slice"
-//import "./styles/Button.css"
+import "./styles/Button.css"
 
 function Button(props) {
     let configs = useSelector(state => state.configs);

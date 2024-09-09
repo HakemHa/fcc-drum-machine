@@ -1,0 +1,21 @@
+button {
+    background: #808080;
+    width: 32%;
+    aspect-ratio: 10 / 8;
+    &:nth-child(3n + 2) {
+        margin: 0 2%;
+    }
+    &:nth-child(-n + 6) {
+        margin-bottom: 2%;
+    }
+    &:hover {
+        background: #737373;
+        cursor: pointer;
+    }
+    border: none;
+    border-radius: 7px;
+    box-shadow: 2px 2px 3px black;
+    font-weight: 500;
+    font-size: 1.2em;
+    font-family: Russo One, sans-serif;
+}

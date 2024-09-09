@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import Button from "./Button";
-//import "./styles/Buttons.css"
+import "./styles/Buttons.css"
 
 function Buttons() {
     let keys = useSelector(state => state.configs.keys);

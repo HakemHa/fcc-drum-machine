@@ -1,15 +1,15 @@
 import Logo from './Logo';
 import Buttons from './Buttons';
 import Configs from './Configs';
-//import './styles/DrumMachine.css'
+import './styles/DrumMachine.css'
 
 function DrumMachine() {
     return (
-        <div>
-            <div>
+        <div className="machine">
+            <div className="logo-container">
                 <Logo />
             </div>
-            <div>
+            <div className="buttons-container">
                 <Buttons />
                 <Configs />
             </div>

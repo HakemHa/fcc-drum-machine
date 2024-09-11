@@ -18,4 +18,15 @@ button {
     font-weight: 500;
     font-size: 1.2em;
     font-family: Russo One, sans-serif;
+    position: relative;
+}
+
+.orange-press {
+    background: orange;
+    &:hover {
+        background: orange;
+    }
+    top: 2px;
+    left: 2px;
+    box-shadow: none;
 }

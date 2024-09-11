@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { changeStatus } from "./store/slice"
 import "./styles/Button.css"
+import React from "react";
 
 function Button(props) {
     let configs = useSelector(state => state.configs);
@@ -16,9 +17,13 @@ function Button(props) {
             sounds[props.value][1].currentTime = 0;
             dispatch(changeStatus(sounds[props.value][0])); 
         }
-    }
+    };
+    let changeColor = (e) => {
+        e.target.classList.add("orange-press");
+        setTimeout(()=>{e.target.classList.remove("orange-press")}, 100);
+    };
     return (
-        <button name={props.value} type="button" onClick={playSound}>{props.value}</button>
+        <button name={props.value} type="button" className="sound-button" onClick={(e) => {playSound(); changeColor(e);}}>{props.value}</button>
     )
 }
 

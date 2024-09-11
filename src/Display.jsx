@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import "./styles/Display.css";
 
 function Display() {
     let status = useSelector(state => state.configs.status);

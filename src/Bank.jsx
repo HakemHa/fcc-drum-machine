@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { changeAudio } from "./store/slice";
-import Switch from "./Switch"
+import Switch from "./Switch";
+import "./styles/Bank.css";
 
 function Bank() {
     let on = useSelector(state => state.configs.on);
@@ -12,9 +13,9 @@ function Bank() {
         return
     }
     return (
-        <div className="switch-container">
+        <div className="switch-container bank">
             <p>Bank</p>
-            <Switch onClick={switchBank} />
+            <Switch onClick={switchBank} default="off" />
         </div>
     )
 }

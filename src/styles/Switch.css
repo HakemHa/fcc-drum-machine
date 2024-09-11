@@ -1,0 +1,27 @@
+.switch {
+    &:hover {
+        background: black;
+        cursor: pointer;
+    }
+    &:disabled:hover {
+        background: black;
+    }
+    div {
+        width: 50%;
+        height: 100%;
+        background: blue;
+    }
+    width: 60px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: black;
+}
+
+.switch-on {
+    position: relative;
+    left: 50%;
+}
+

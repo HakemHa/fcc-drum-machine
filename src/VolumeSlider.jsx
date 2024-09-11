@@ -1,5 +1,6 @@
 import { useSelector, useDispatch} from "react-redux";
 import { changeVolume, emptyStatus } from './store/slice';
+import "./styles/VolumeSlider.css";
 
 function VolumeSlider() {
     let configs = useSelector(state => state.configs);

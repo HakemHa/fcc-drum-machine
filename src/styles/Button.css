@@ -1,4 +1,4 @@
-button {
+.sound-button {
     background: #808080;
     width: 32%;
     aspect-ratio: 10 / 8;
@@ -19,6 +19,23 @@ button {
     font-size: 1.2em;
     font-family: Russo One, sans-serif;
     position: relative;
+    &:active {
+        top: 2px;
+        left: 2px;
+        box-shadow: none;
+    }
+    &:disabled {
+        color: black;
+        &:hover {
+            background: #808080;
+        }
+    }
+}
+
+.button-active {
+    top: 2px;
+    left: 2px;
+    box-shadow: none;
 }
 
 .orange-press {

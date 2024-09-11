@@ -4,6 +4,30 @@ import "./styles/Button.css"
 import React from "react";
 
 function Button(props) {
+    React.useEffect(() => {
+        let button = document.querySelector(`button[name="${props.value}"]`);
+        let downHandler = (k) => {
+            console.log("ok");
+            k = k.key;
+            if (k.toUpperCase() === props.value) {
+                button.classList.add("button-active");
+            }
+        }
+        let keyPressHandler = (k) => {
+            k = k.key;
+            if (k.toUpperCase() === props.value) {
+                button.classList.toggle("button-active");
+                button.click();
+            }
+        };
+        window.addEventListener("keydown", downHandler);
+        window.addEventListener("keyup", keyPressHandler);
+
+        return () => {
+            window.removeEventListener("keydown", downHandler);
+            window.removeEventListener("keyup", keyPressHandler);
+        };
+    }, []);
     let configs = useSelector(state => state.configs);
     let dispatch = useDispatch();
     let sounds = configs.sounds;

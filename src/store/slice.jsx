@@ -1,27 +1,48 @@
 import { createSlice } from "@reduxjs/toolkit";
+//Heater Kit
+import Heater_Heater1 from "../assets/heaterKit/Heater-1.mp3";
+import Heater_Heater2  from "../assets/heaterKit/Heater-2.mp3";
+import  Heater_Heater3 from "../assets/heaterKit/Heater-3.mp3";
+import Heater_Heater4 from "../assets/heaterKit/Heater-4_1.mp3";
+import Heater_Clap from "../assets/heaterKit/Heater-6.mp3";
+import Heater_OpenHH from "../assets/heaterKit/Dsc_Oh.mp3";
+import Heater_KicknHat from "../assets/heaterKit/Kick_n_Hat.mp3";
+import Heater_Kick from "../assets/heaterKit/RP4_KICK_1.mp3";
+import Heater_ClosedHH from "../assets/heaterKit/Cev_H2.mp3";
+//Smooth Piano Kit
+import Piano_Chord1 from "../assets/smoothPianoKit/Chord_1.mp3";
+import Piano_Chord2 from "../assets/smoothPianoKit/Chord_2.mp3";
+import Piano_Chord3 from "../assets/smoothPianoKit/Chord_3.mp3";
+import Piano_Shaker from "../assets/smoothPianoKit/Give_us_a_light.mp3";
+import Piano_OpenHH from "../assets/smoothPianoKit/Dry_Ohh.mp3";
+import Piano_ClosedHH from "../assets/smoothPianoKit/Bld_H1.mp3";
+import Piano_PunchyKick from "../assets/smoothPianoKit/punchy_kick_1.mp3";
+import Piano_SideStick from "../assets/smoothPianoKit/side_stick_1.mp3";
+import Piano_Snare from "../assets/smoothPianoKit/Brk_Snr.mp3";
+
+
 
 const keys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
-const kitPath = "./src/assets/"
 const heaterKit = {};
-heaterKit[keys[0]] = ["Heater 1", new Audio(kitPath + "heaterKit/Heater-1.mp3")];
-heaterKit[keys[1]] = ["Heater 2", new Audio(kitPath + "heaterKit/Heater-2.mp3")];
-heaterKit[keys[2]] = ["Heater 3", new Audio(kitPath + "heaterKit/Heater-3.mp3")];
-heaterKit[keys[3]] = ["Heater 4", new Audio(kitPath + "heaterKit/Heater-4_1.mp3")];
-heaterKit[keys[4]] = ["Clap", new Audio(kitPath + "heaterKit/Heater-6.mp3")];
-heaterKit[keys[5]] = ["Open HH", new Audio(kitPath + "heaterKit/Dsc_Oh.mp3")];
-heaterKit[keys[6]] = ["Kick n' Hat", new Audio(kitPath + "heaterKit/Kick_n_Hat.mp3")];
-heaterKit[keys[7]] = ["Kick", new Audio(kitPath + "heaterKit/RP4_KICK_1.mp3")];
-heaterKit[keys[8]] = ["Closed HH", new Audio(kitPath + "heaterKit/Cev_H2.mp3")];
+heaterKit[keys[0]] = ["Heater 1", new Audio(Heater_Heater1)];
+heaterKit[keys[1]] = ["Heater 2", new Audio(Heater_Heater2)];
+heaterKit[keys[2]] = ["Heater 3", new Audio(Heater_Heater3)];
+heaterKit[keys[3]] = ["Heater 4", new Audio(Heater_Heater4)];
+heaterKit[keys[4]] = ["Clap", new Audio(Heater_Clap)];
+heaterKit[keys[5]] = ["Open HH", new Audio(Heater_OpenHH)];
+heaterKit[keys[6]] = ["Kick n' Hat", new Audio(Heater_KicknHat)];
+heaterKit[keys[7]] = ["Kick", new Audio(Heater_Kick)];
+heaterKit[keys[8]] = ["Closed HH", new Audio(Heater_ClosedHH)];
 const smoothPianoKit = {};
-smoothPianoKit[keys[0]] = ["Chord 1", new Audio(kitPath + "smoothPianoKit/Chord_1.mp3")];
-smoothPianoKit[keys[1]] = ["Chord 2", new Audio(kitPath + "smoothPianoKit/Chord_2.mp3")];
-smoothPianoKit[keys[2]] = ["Chord 3", new Audio(kitPath + "smoothPianoKit/Chord_3.mp3")];
-smoothPianoKit[keys[3]] = ["Shaker", new Audio(kitPath + "smoothPianoKit/Give_us_a_light.mp3")];
-smoothPianoKit[keys[4]] = ["Open HH", new Audio(kitPath + "smoothPianoKit/Dry_Ohh.mp3")];
-smoothPianoKit[keys[5]] = ["Closed HH", new Audio(kitPath + "smoothPianoKit/Bld_H1.mp3")];
-smoothPianoKit[keys[6]] = ["Punchy Kick", new Audio(kitPath + "smoothPianoKit/punchy_kick_1.mp3")];
-smoothPianoKit[keys[7]] = ["Side Stick", new Audio(kitPath + "smoothPianoKit/side_stick_1.mp3")];
-smoothPianoKit[keys[8]] = ["Snare", new Audio(kitPath + "smoothPianoKit/Brk_Snr.mp3")];
+smoothPianoKit[keys[0]] = ["Chord 1", new Audio(Piano_Chord1)];
+smoothPianoKit[keys[1]] = ["Chord 2", new Audio(Piano_Chord2)];
+smoothPianoKit[keys[2]] = ["Chord 3", new Audio(Piano_Chord3)];
+smoothPianoKit[keys[3]] = ["Shaker", new Audio(Piano_Shaker)];
+smoothPianoKit[keys[4]] = ["Open HH", new Audio(Piano_OpenHH)];
+smoothPianoKit[keys[5]] = ["Closed HH", new Audio(Piano_ClosedHH)];
+smoothPianoKit[keys[6]] = ["Punchy Kick", new Audio(Piano_PunchyKick)];
+smoothPianoKit[keys[7]] = ["Side Stick", new Audio(Piano_SideStick)];
+smoothPianoKit[keys[8]] = ["Snare", new Audio(Piano_Snare)];
 const initialState = {
     sounds: heaterKit,
     keys: keys,

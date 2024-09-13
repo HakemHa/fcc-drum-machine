@@ -7,7 +7,6 @@ function Button(props) {
     React.useEffect(() => {
         let button = document.querySelector(`button[name="${props.value}"]`);
         let downHandler = (k) => {
-            console.log("ok");
             k = k.key;
             if (k.toUpperCase() === props.value) {
                 button.classList.add("button-active");
